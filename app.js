@@ -38,7 +38,7 @@ app.post('/create/friendship', async (req, res, next) => {
 })
 app.get('/fetch/users', async (req, res, next) => {
     try {
-        const users = await model.fetchUsers(req,res);
+        const users = await model.fetchUsers(req);
         console.log(users)
         res.send(users)
     } catch (error) {
@@ -47,7 +47,7 @@ app.get('/fetch/users', async (req, res, next) => {
 })
 app.get('/fetch/users/friends', async (req, res, next) => {
     try {
-        const friends = await model.fetchFriends(req,res);
+        const friends = await model.fetchFriends(req);
         res.send(friends)
     } catch (error) {
         res.send({success:false})
@@ -55,7 +55,7 @@ app.get('/fetch/users/friends', async (req, res, next) => {
 })
 app.get('/fetch/users/friendsOffriends', async (req, res, next) => {
     try {
-        const friendsOfFriends = await model.fetchFriendsOfFriends(req,res);
+        const friendsOfFriends = await model.fetchFriendsOfFriends(req);
         res.send(friendsOfFriends)
     } catch (error) {
         res.send({success:false})

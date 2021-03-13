@@ -24,7 +24,6 @@ const router = new VueRouter({
 // whole app router-aware.
 new Vue({
 	el: "#app",
-	router,
 	data() {
 		return {
 			posts: [''],

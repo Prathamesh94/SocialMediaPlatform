@@ -84,7 +84,7 @@ const imageFilter = function (req, file, cb) {
     }
     cb(null, true);
 };
-function fetchUsers(req,res) {
+function fetchUsers(req) {
     return new Promise(async (resolve,reject)=>{
         try {
             const output = await db.fetchUsers(req.headers.pagesize*(req.headers.pageno-1),req.headers.pagesize)
@@ -99,10 +99,10 @@ function fetchUsers(req,res) {
     })
 
 }
-function fetchFriends(req,res) {
+function fetchFriends(req) {
     return new Promise(async (resolve,reject)=>{
         try {
-            const output = await db.fetchFriends(req.headers.user_id,req.headers.pageSize*(req.headers.pageNo-1),req.headers.pageSize)
+            const output = await db.fetchFriends(req.headers.user_id,req.headers.pagesize*(req.headers.pageno-1),req.headers.pagesize)
             resolve(output)
         }
         catch (error) {
@@ -114,7 +114,7 @@ function fetchFriends(req,res) {
     })
 
 }
-function fetchFriendsOfFriends(req,res) {
+function fetchFriendsOfFriends(req) {
 
     return new Promise(async (resolve,reject)=>{
         try {
