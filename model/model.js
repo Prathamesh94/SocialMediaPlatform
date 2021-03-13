@@ -118,7 +118,7 @@ function fetchFriendsOfFriends(req) {
 
     return new Promise(async (resolve,reject)=>{
         try {
-            const output = await db.fetchFriendsOfFriends(req.headers.user_id,req.headers.pageSize*(req.headers.pageNo-1),req.headers.pageSize)
+            const output = await db.fetchFriendsOfFriends(req.headers.user_id,req.headers.pagesize*(req.headers.pageno-1),req.headers.pagesize)
             resolve(output)
         }
         catch (error) {
