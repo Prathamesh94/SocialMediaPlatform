@@ -4,4 +4,10 @@ run npm install
 
 npm start
 
-Go to http://localhost:5000/ to access SPA Page
+cd vuejs_ui 
+
+npm install
+
+npm run serve
+
+Go to http://localhost:8081/ to access SPA Page
